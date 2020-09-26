@@ -45,7 +45,7 @@ public class MovieController {
     }
 
     @PostMapping("")
-    public String createUser(Movie movie){
+    public void createMovie(Movie movie){
         movieService.createMovie(movie);
     }
 }
