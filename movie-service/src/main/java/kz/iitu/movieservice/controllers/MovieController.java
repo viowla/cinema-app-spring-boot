@@ -48,4 +48,11 @@ public class MovieController {
     public void createMovie(Movie movie){
         movieService.createMovie(movie);
     }
+
+    @PutMapping("/update/{id}")
+    public void updateMovie(@PathVariable Long id,
+                            @RequestBody Movie movie){
+        movieService.updateMovie(id, movie);
+    }
+
 }

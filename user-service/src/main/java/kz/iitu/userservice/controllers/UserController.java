@@ -46,7 +46,7 @@ public class UserController {
         return userRepository.findAllByUserRoleContains(role);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public void updateUser(@PathVariable Long id,
                            @RequestBody User user) {
 
@@ -59,7 +59,7 @@ public class UserController {
         userService.updateUser(id, user);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteUser(@PathVariable Long id) {
         userRepository.deleteById(id);
     }
