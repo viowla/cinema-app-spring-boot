@@ -1,5 +1,6 @@
 package kz.iitu.cinemaservice.entities;
 
+import kz.iitu.movieservice.entities.Movie;
 import kz.iitu.userservice.entities.User;
 
 import javax.persistence.*;
@@ -21,5 +22,9 @@ public class Reservation {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seat_id")
     private Seat seat;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "movie_id")
+    private Movie movie;
 
 }
