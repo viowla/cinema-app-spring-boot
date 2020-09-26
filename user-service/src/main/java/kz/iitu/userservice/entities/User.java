@@ -4,6 +4,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,47 +16,55 @@ public class User implements UserDetails {
     private Long userId;
 
     @Column(unique = true)
-    private String userFirstName;
-    private String userLastName;
+    private String userName;
     private String email;
+    private String password;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_role", joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "userId")},
             inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "roleId")})
     private List<Role> userRole;
 
+    public User(){
+        userRole = new ArrayList<>();
+    }
+
+    public void addUserRole(Role newUserRole){
+        userRole.add(newUserRole);
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return userRole;
     }
 
     @Override
     public String getPassword() {
-        return null;
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return userName;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }
