@@ -7,6 +7,11 @@ import javax.persistence.Table;
 @Table(name = "cinema_seat")
 public class Seat {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long seatId;
+
+
     private Room room;
     private int rowNumber;
     private int columnNumber;
