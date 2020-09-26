@@ -1,4 +1,4 @@
-package kz.iitu.userservice.config;
+package kz.iitu.authservice.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;

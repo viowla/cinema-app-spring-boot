@@ -1,5 +1,7 @@
 package kz.iitu.userservice.config;
 
+import kz.iitu.authservice.services.JwtTokenAuth;
+import kz.iitu.authservice.services.JwtTokenGen;
 import kz.iitu.userservice.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -26,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //.antMatchers("/main").permitAll()
                 .antMatchers("/users/**").hasAuthority("ADMIN")
                 .antMatchers("/role/**").hasAuthority("ADMIN")
-                .antMatchers("/dessert/create").hasAuthority("ADMIN")
+                .antMatchers("/movie/create").hasAuthority("ADMIN")
                 .anyRequest().authenticated()
                 //.autnenticated
                 .and()

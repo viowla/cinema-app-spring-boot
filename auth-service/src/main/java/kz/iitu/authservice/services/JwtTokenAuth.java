@@ -1,4 +1,4 @@
-package kz.iitu.userservice.config;
+package kz.iitu.authservice.services;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -75,3 +75,4 @@ public class JwtTokenAuth extends OncePerRequestFilter {
     }
 
 }
+
