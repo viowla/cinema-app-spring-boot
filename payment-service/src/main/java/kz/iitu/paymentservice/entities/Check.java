@@ -3,11 +3,15 @@ package kz.iitu.paymentservice.entities;
 import kz.iitu.cinemaservice.entities.Reservation;
 import kz.iitu.userservice.entities.User;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@Getter
+@Setter
 public class Check {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,11 +28,5 @@ public class Check {
     @Column(name = "cost")
     private double cost;
 
-    public double getCost() {
-        return cost;
-    }
 
-    public void setCost(double cost) {
-        this.cost = cost;
-    }
 }

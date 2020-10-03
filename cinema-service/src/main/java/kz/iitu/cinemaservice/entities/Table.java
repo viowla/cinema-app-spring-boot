@@ -1,11 +1,20 @@
 package kz.iitu.cinemaservice.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @javax.persistence.Table(name = "table")
+@Getter
+@Setter
 public class Table {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long tableId;
 
     private Date startDate;
     private Date endDate;
@@ -18,21 +27,4 @@ public class Table {
         this.startDate=startDate;
     }
 
-    @Column(name = "start_date")
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    @Column(name = "end_date")
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
 }

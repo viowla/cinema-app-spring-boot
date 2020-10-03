@@ -1,10 +1,15 @@
 package kz.iitu.cinemaservice.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "cinema_seat")
+@Getter
+@Setter
 public class Seat {
 
     @Id
@@ -33,23 +38,5 @@ public class Seat {
 
     public void setRoom(Room room) {
         this.room = room;
-    }
-
-    @Column(name = "seat_row_number")
-    public int getRowNumber() {
-        return rowNumber;
-    }
-
-    public void setRowNumber(int rowNumber) {
-        this.rowNumber = rowNumber;
-    }
-
-    @Column(name = "seat_column_number")
-    public int getColumnNumber() {
-        return columnNumber;
-    }
-
-    public void setColumnNumber(int columnNumber) {
-        this.columnNumber = columnNumber;
     }
 }

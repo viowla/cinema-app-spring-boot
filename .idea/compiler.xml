@@ -6,16 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="payment-service" />
-        <module name="user-service" />
-        <module name="auth-service" />
         <module name="movie-service" />
+        <module name="payment-service" />
+        <module name="eureka" />
+        <module name="user-service" />
         <module name="cinema-service" />
+        <module name="auth-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="auth-service" target="1.8" />
       <module name="cinema-service" target="1.8" />
+      <module name="eureka" target="1.8" />
       <module name="movie-service" target="1.8" />
       <module name="payment-service" target="1.8" />
       <module name="user-service" target="1.8" />
@@ -25,6 +27,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="auth-service" options="-parameters" />
       <module name="cinema-service" options="-parameters" />
+      <module name="eureka" options="-parameters" />
       <module name="movie-service" options="-parameters" />
       <module name="payment-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
